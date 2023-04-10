@@ -6,9 +6,9 @@ from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
-from myapp import serializers
-from myapp import models
-from myapp import permissions
+from instagramlite.myapp import serializers
+from instagramlite.myapp import models
+from instagramlite.myapp import permissions
 # Create your views here.
 
 
@@ -116,7 +116,7 @@ class UserProfileFeedViewSets(viewsets.ModelViewSet):
     """Handles Creating Reading Updating Profile feed items"""
     authentication_classes = (TokenAuthentication,)
     serializer_class = serializers.ProfileFeedSerializer
-    queryset = models.ProfileFeedSerializer.objects.all()
+    queryset = models.ProfileFeedItem.objects.all()
     permission_classes = (
         permissions.UpdateOwnProfileStatus,
         IsAuthenticatedOrReadOnly

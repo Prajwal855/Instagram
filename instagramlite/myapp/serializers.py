@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from myapp import models
+from instagramlite.myapp import models
 
 
 class Helloserializer(serializers.Serializer):
